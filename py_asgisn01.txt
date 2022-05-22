@@ -1,0 +1,51 @@
+Assignment-1
+
+1. In the below elements which of them are values or an expression? eg:- values can be integer or string and expressions will be mathematical operators.
+Answer:
+*  : mathematical operators.
+'hello': string
+-87.8: integer
+- : mathematical operators.
+/ : mathematical operators.
+6 : integer
+
+2. What is the difference between string and variable?
+
+Ans: A Variable is a store of information, 
+and a String is a type which we store in Variable
+
+3. Describe three different data types.
+Ans: int, foat, str
+
+4. What is an expression made up of? What do all expressions do?
+Ans: expression made up of is a combination of operators and operands
+
+5. This assignment statements, like spam = 10. What is the difference between an expression and a statement?
+Ans:  An Expression always evaluates to a value. And, A statement does something, like creating a variable or displaying a value
+
+6. After running the following code, what does the variable bacon contain?
+bacon = 22
+bacon + 1
+
+ans: 22
+7. What should the values of the following two terms be?
+'spam' + 'spamspam'
+'spam' * 3
+
+ans:
+spamspamspam
+spamspamspam
+
+8. Why is eggs a valid variable name while 100 is invalid?
+Ans: because 100 is integer
+
+9. What three functions can be used to get the integer, floating-point number, or string version of a value?
+
+Ans:
+ int() , float() , and str( ) 
+10. Why does this expression cause an error? How can you fix it?
+'I have eaten ' + 99 + ' burritos.'
+
+Ans: can only concatenate str (not "int") to str
+change to 
+print('I have eaten ' + str(99) + ' burritos.')
