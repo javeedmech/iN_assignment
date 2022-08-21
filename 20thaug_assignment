@@ -1,0 +1,47 @@
+#1 . Write a program to insert a record in sql table via api database
+
+#python code:
+
+import mysql.connector as conn
+mydb=conn.connect(host="localhost", user="root", passwd="Jav@5141")
+cursor=mydb.cursor()
+
+i = "create table  if not exists ineuron.timetable4 (period int,mon varchar(30),wed varchar(30),fri varchar(30))"
+cursor.execute(i)
+
+from flask import  Flask , request, jsonify
+app = Flask(__name__)
+
+@app.route('/abc',methods=['GET' , 'POST'])
+def test1():
+
+    if(request.method=='POST'):
+        t = request.json['period']
+        s1 = request.json['mon']
+        s2 = request.json['wed']
+        s3 = request.json['fri']
+        s = f"insert into ineuron.timetable4 values({t},'{s1}','{s2}','{s3}')"
+        cursor.execute(s)
+        mydb.commit()
+        return jsonify(s)
+
+if __name__=='__main__'  :
+    app.run()
+
+
+#postman SEND
+
+{
+    "period":9,
+    "mon": "sports",
+    "wed":"kannada",
+    "fri":"maths"
+}
+
+#returnjed answer => "insert into ineuron.timetable4 values(9,'sports','kannada','maths')"
+
+#mysql fetch table:
+
+period	mon	wed	fri
+8	eng	hin	maths
+9	sports	kannada	maths
